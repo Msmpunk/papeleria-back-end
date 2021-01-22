@@ -11,15 +11,6 @@ export async function insertar(req, res) {
       console.log({message: 'There is a problem in the db', error: error})
     }
 }
-
-export async function obtener(req, res) {
-    try {
-        const resultados = await pool.query("select id, nombre, precio from productos");
-        return resultados.rows;
-    } catch(e){
-        console.log({message: 'There is a problem in the db', error: error})
-    }
-}
   
 export async function obtenerPorId(id) {
     try {
@@ -30,6 +21,16 @@ export async function obtenerPorId(id) {
     }
 
 }
+
+export async function obtener(req, res) {
+    try {
+        const resultados = await pool.query("select id, nombre, precio from productos");
+        return resultados.rows;
+    } catch(e){
+        console.log({message: 'There is a problem in the db', error: error})
+    }
+}
+
 export async function actualizar(id, nombre, precio) {
     try {
         const resultados = pool.query(`update productos

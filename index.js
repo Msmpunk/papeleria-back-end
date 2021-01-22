@@ -5,9 +5,12 @@ import bodyParser from 'body-parser';
 import session from 'express-session';
 import cors from 'cors';
 
+import router from './api/routes/routes';
+// import db from './api/models/index';
+
+
 const port = process.env.PORT || 4000;
 
-const api_routes = require('./api/routes/routes');
 const app = express();
 
 app.use(cors());
@@ -33,7 +36,7 @@ app.use(session({
   saveUninitialized: false
 }));
 
-app.use('/api/v1',api_routes);
+app.use('/api/v1',router);
 
 app.use((req, res) => {
   res.status(404).send({

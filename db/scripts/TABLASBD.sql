@@ -1,9 +1,18 @@
 ---------------------------------------------------
 	--AUTOR: 01MSM
 	--BD: PROYECTO_FINAL_PAPELERIA
-	--DESCRIPCIÓN: CREACION DE TABLAS 
-	--FECHA DE CREACIÓN: 17 de enero de 2021
+	--DESCRIPCIï¿½N: CREACION DE TABLAS 
+	--FECHA DE CREACIï¿½N: 17 de enero de 2021
 ---------------------------------------------------
+--TABLA 0
+CREATE TABLE USERS(
+	id_user INT GENERATED ALWAYS AS IDENTITY NOT NULL,
+	nombre VARCHAR(50) NOT NULL,
+	correo VARCHAR(50) NOT NULL UNIQUE,
+	contraseÃ±a VARCHAR(250) NOT NULL,
+	CONSTRAINT USER_PK PRIMARY KEY(id_user)
+);
+
 --TABLA 1
 CREATE TABLE PROVEEDOR(
 	id_proveedor INT GENERATED ALWAYS AS IDENTITY NOT NULL,

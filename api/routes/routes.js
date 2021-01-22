@@ -1,10 +1,15 @@
 'use strict';
 
-const express = require('express');
-const router = express.Router();
+import { Router } from 'express';
+import { getBooks } from '../controllers/finder'
+import { signup, signin } from '../controllers/users'
 
-const finderController = require('../controllers/finder')
+const router = Router();
 
-router.get('/finder', finderController.getBooks);
+// LOGIN AND CREATE
+router.post('/login', signin);
+router.post('/create-new-account', signup);
 
-module.exports = router;
+router.get('/finder', getBooks);
+
+export default router;

@@ -64,7 +64,7 @@ VALUES(5532785902, 9);-- KAREN
 INSERT INTO TELEFONO_PROVEEDOR(telefono, id_proveedor) 
 VALUES(5552719421, 10);-- MONSE
 
-SELECT * FROM TELEFONO_PROVEEDOR
+SELECT * FROM TELEFONO_PROVEEDOR;
 
 ----------------------------------------------------------------------------------------------
 --TABLA 3
@@ -80,7 +80,7 @@ VALUES('Impresiones','Servicio de impresiones en varios tama�os, c, b/n');--IM
 INSERT INTO CATEGORIA(nombre_categoria, descripcion_categoria)
 VALUES('Recargas','Servicio de recargas, todas las compa�ias');--RECARGAS 4
 
-SELECT * FROM CATEGORIA
+SELECT * FROM CATEGORIA;
 ----------------------------------------------------------------------------------------------
 --TABLA 4
 --PAPELERIA 2
@@ -150,7 +150,7 @@ INSERT INTO PRODUCTO(precio_unitario, codigo_barras, descripcion_producto,marca_
 VALUES(50, 'B-20000-50', 'Recarga Unefon 50', 'Unefon', 4, 2),
 	  (100, 'B-20001-00', 'Recarga Unefon 100', 'Unefon', 4, 2);
 
-SELECT * FROM PRODUCTO
+SELECT * FROM PRODUCTO;
 ----------------------------------------------------------------------------------------------
 --TABLA 5
 INSERT INTO INVENTARIO(id_producto, precio_unitario, stock, precio_compra, fecha_compra)
@@ -180,7 +180,7 @@ INSERT INTO INVENTARIO(id_producto, precio_unitario, stock, precio_compra, fecha
 VALUES (33, 150, 100, 140, '20200509'), (34, 200, 100, 180, '20200509'),(35, 500, 10, 480, '20200509'),
 	   (36, 50, 100, 48, '20200509'), (37, 100, 100, 90, '20200509');
 
-SELECT * FROM INVENTARIO
+SELECT * FROM INVENTARIO;
 
 ----------------------------------------------------------------------------------------------
 --TABLA 6
@@ -204,7 +204,7 @@ INSERT INTO CLIENTE(nombre, razon_social, calle, numero, colonia, estado, codigo
 VALUES ('Beatriz Santos Palomino','PASAB73H0', 'Alfonso Trece', 1, 'Molino de Rosas', 'CDMX', 04800),
 		('Salma Jimenez Reyes','REJIS23H1', 'Jardines', 45, 'Porfirio Diaz', 'Estado de Mexico', 09878);
 
-SELECT * FROM CLIENTE
+SELECT * FROM CLIENTE;
 ----------------------------------------------------------------------------------------------
 --TABLA 7
 
@@ -220,7 +220,7 @@ VALUES ('almaneni@gmail.com', 1),
 		('sanpa_bea@gmail.com', 9),
 		('salma89-jim-re@gmail.com', 10);
 
-SELECT * FROM EMAIL_CLIENTE
+SELECT * FROM EMAIL_CLIENTE;
 
 ----------------------------------------------------------------------------------------------
 --TABLA 8
@@ -234,7 +234,7 @@ VALUES('VENT-001', 1, '20201202'), ('VENT-002', 2, '20201115'), ('VENT-003', 3, 
 
 INSERT INTO VENTA(numero_venta, id_cliente, fecha_venta)
 VALUES('VENT-011', 8, '20201202');
-SELECT * FROM VENTA
+SELECT * FROM VENTA;
 
 ----------------------------------------------------------------------------------------------
 --TABLA 9
@@ -243,4 +243,4 @@ VALUES('VENT-001',1,5,2), ('VENT-002',1,5,10), ('VENT-003',18,1.5,20),('VENT-004
 		('VENT-005',26,150,1), ('VENT-006',13,300,1), ('VENT-007',37,100,1),
 		('VENT-008',2,3,1), ('VENT-009',6,150,1), ('VENT-010',12,200, 1), ('VENT-011',21,10,2);
 
-SELECT * FROM VENTA_DETALLES
+SELECT * FROM VENTA_DETALLES;
