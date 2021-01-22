@@ -2,7 +2,7 @@ import pool from '../../db/db-connection'
 
 export async function insertar(data) {
   
-  const { id_user, nombre, correo, contraseña } = data;
+  const { nombre, correo, contraseña } = data;
 
   try {
       let resultados = await pool.query(`insert into users

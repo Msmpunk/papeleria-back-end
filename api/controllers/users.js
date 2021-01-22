@@ -14,10 +14,10 @@ export async function signup(req, res) {
        
 
         if(result.status){
-            result.rows[0].contraseña = ':)'
+            result.data.rows[0].contraseña = ':)'
             return res.status(200).send({
                 status: true,
-                userdata: result.rows[0],
+                userdata: result.data.rows[0],
             });
     
         }
@@ -31,6 +31,7 @@ export async function signup(req, res) {
         }
 
     } catch (error) {
+        console.log("🚀 ~ file: users.js ~ line 46 ~ signup ~ error", error)
         return res.status(500).send({ message: error });
     }
 
@@ -43,6 +44,7 @@ export async function signin(req, res)  {
         const result = await obtenerPorCorreo(correo)
 
         if (!result.status) {
+        
             return res.status(400).send({
                 status: false,
                 message: result.detail,
@@ -76,6 +78,7 @@ export async function signin(req, res)  {
         });
         
     } catch (error) {
+        console.log("🚀 ~ file: users.js ~ line 81 ~ signin ~ error", error)
         return res.status(500).send({ message: error });
     }
 
