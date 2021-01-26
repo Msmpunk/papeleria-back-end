@@ -25,9 +25,16 @@ export async function obtenerPorId(id) {
 export async function obtener(req, res) {
     try {
         const resultados = await pool.query("select id, nombre, precio from productos");
-        return resultados.rows;
+
+        return {
+            data: resultados.rows,
+            status: true
+        };
     } catch(e){
-        console.log({message: 'There is a problem in the db', error: error})
+        return {
+            message:  e,
+            status: false
+          }
     }
 }
 

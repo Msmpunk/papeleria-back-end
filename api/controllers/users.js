@@ -8,7 +8,9 @@ import { insertar, obtenerPorCorreo } from '../models/users'
 export async function signup(req, res) {
 
     try {
+
         req.body.contraseña = hashSync(req.body.contraseña, 8)
+        
 
         const result = await insertar(req.body)
        
@@ -31,7 +33,6 @@ export async function signup(req, res) {
         }
 
     } catch (error) {
-        console.log("🚀 ~ file: users.js ~ line 46 ~ signup ~ error", error)
         return res.status(500).send({ message: error });
     }
 
@@ -40,8 +41,14 @@ export async function signup(req, res) {
 export async function signin(req, res)  {
     try {
         const { correo, contraseña } = req.body;
-
         const result = await obtenerPorCorreo(correo)
+        
+        if(!result.data){
+            return res.status(400).send({
+                status: false,
+                message: 'There is no information',
+            });
+        }
 
         if (!result.status) {
         
@@ -74,11 +81,11 @@ export async function signin(req, res)  {
             id_user: result.data.id_user,
             nombre: result.data.nombre,
             correo: result.data.correo,
-            accessToken: token
+            accessToken: token,
+            status: true,
         });
         
     } catch (error) {
-        console.log("🚀 ~ file: users.js ~ line 81 ~ signin ~ error", error)
         return res.status(500).send({ message: error });
     }
 
