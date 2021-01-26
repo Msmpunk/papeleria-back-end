@@ -73,7 +73,6 @@ export async function reduceProducts(id_producto, stock) {
     try {
         const resultados = await pool.query("select * from inventario where id_producto = $1", [id_producto]);
         const inventario = resultados.rows[0]
-        console.log(parseInt(inventario.stock), parseInt(stock))
         if(parseInt(inventario.stock) < parseInt(stock)){
             return {
                 message: `No se realizó el movimiento, este producto se queda con ${inventario.stock}, no hay mas en el inventario`,
