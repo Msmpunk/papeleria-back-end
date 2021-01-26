@@ -13,6 +13,7 @@ export async function signup(req, res) {
         
 
         const result = await insertar(req.body)
+        console.log("🚀 ~ file: users.js ~ line 16 ~ signup ~ result", result)
        
 
         if(result.status){
